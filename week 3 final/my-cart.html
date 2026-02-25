@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand - My Cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; }
+    </style>
+</head>
+<body x-data="cartManager()">
+
+    <header class="bg-white border-b sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="bg-blue-600 p-2 rounded-lg text-white">
+                    <i class="fas fa-shopping-bag text-xl"></i>
+                </div>
+                <span class="text-2xl font-bold text-blue-600">Brand</span>
+            </div>
+            <div class="flex items-center gap-8 text-gray-500 text-xs">
+                <div class="text-center cursor-pointer hover:text-blue-600"><i class="fas fa-user block text-lg mb-1 mx-auto"></i>Profile</div>
+                <div class="text-center cursor-pointer hover:text-blue-600"><i class="fas fa-comment block text-lg mb-1 mx-auto"></i>Message</div>
+                <div class="text-center cursor-pointer hover:text-blue-600"><i class="fas fa-heart block text-lg mb-1 mx-auto"></i>Orders</div>
+                <div class="text-center cursor-pointer text-blue-600 font-bold relative">
+                    <i class="fas fa-shopping-cart block text-lg mb-1 mx-auto"></i>My cart
+                    <span class="absolute -top-1 -right-2 bg-red-500 text-white rounded-full px-1.5 text-[10px]" x-text="cartItems.length"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <h1 class="text-2xl font-bold mb-6 text-gray-800">My cart (<span x-text="cartItems.length"></span>)</h1>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            
+            <div class="lg:col-span-9">
+                <div class="bg-white border rounded-lg overflow-hidden mb-4">
+                    <template x-if="cartItems.length === 0">
+                        <div class="p-10 text-center text-gray-400">Your cart is empty.</div>
+                    </template>
+                    
+                    <template x-for="(item, index) in cartItems" :key="item.id">
+                        <div class="p-6 border-b last:border-b-0 flex flex-col md:flex-row gap-4">
+                            <div class="w-20 h-20 border rounded-lg p-2 flex-shrink-0 bg-gray-50">
+                                <img :src="item.img" class="w-full h-full object-contain">
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-start">
+                                    <h3 class="font-semibold text-gray-800" x-text="item.name"></h3>
+                                    <span class="font-bold text-gray-900" x-text="'$' + (item.price * item.qty).toFixed(2)"></span>
+                                </div>
+                                <p class="text-sm text-gray-400 mt-1">Size: <span x-text="item.size"></span>, Color: <span x-text="item.color"></span>, Material: <span x-text="item.material"></span></p>
+                                <p class="text-sm text-gray-400">Seller: <span x-text="item.seller"></span></p>
+                                <div class="mt-4 flex gap-3">
+                                    <button @click="removeItem(index)" class="text-red-500 border border-gray-200 px-3 py-1 rounded text-sm font-medium hover:bg-red-50">Remove</button>
+                                    <button class="text-blue-600 border border-gray-200 px-3 py-1 rounded text-sm font-medium hover:bg-blue-50">Save for later</button>
+                                </div>
+                            </div>
+                            <div class="w-24">
+                                <select x-model.number="item.qty" class="w-full border rounded-lg p-2 text-sm outline-none">
+                                    <template x-for="n in 10">
+                                        <option :value="n" x-text="'Qty: ' + n"></option>
+                                    </template>
+                                </select>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+                <div class="flex justify-between items-center">
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded-lg font-bold flex items-center gap-2">
+                        <i class="fas fa-arrow-left"></i><a href="index.html" >Back to shop </a>
+                    </button>
+                    <button @click="cartItems = []" class="border border-blue-600 text-blue-600 px-6 py-2 rounded-lg font-bold hover:bg-blue-50">
+                        Remove all
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-500"><i class="fas fa-lock"></i></div>
+                        <div><p class="font-bold text-sm">Secure payment</p><p class="text-xs text-gray-400">Have you ever finally just</p></div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-500"><i class="fas fa-comment-dots"></i></div>
+                        <div><p class="font-bold text-sm">Customer support</p><p class="text-xs text-gray-400">Have you ever finally just</p></div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-500"><i class="fas fa-truck"></i></div>
+                        <div><p class="font-bold text-sm">Free delivery</p><p class="text-xs text-gray-400">Have you ever finally just</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-3">
+                <div class="bg-white border rounded-lg p-4 mb-4">
+                    <p class="text-sm text-gray-600 mb-2">Have a coupon?</p>
+                    <div class="flex border rounded-lg overflow-hidden">
+                        <input type="text" placeholder="Add coupon" class="w-full px-3 py-2 outline-none text-sm">
+                        <button class="bg-white border-l text-blue-600 px-4 py-2 text-sm font-bold">Apply</button>
+                    </div>
+                </div>
+
+                <div class="bg-white border rounded-lg p-4 shadow-sm">
+                    <div class="space-y-3 text-gray-600 text-sm border-b pb-4 mb-4">
+                        <div class="flex justify-between"><span>Subtotal:</span> <span class="text-gray-900" x-text="'$' + subtotal().toFixed(2)"></span></div>
+                        <div class="flex justify-between"><span>Discount:</span> <span class="text-red-500" x-text="'- $' + discount.toFixed(2)"></span></div>
+                        <div class="flex justify-between"><span>Tax:</span> <span class="text-green-500" x-text="'+ $' + tax().toFixed(2)"></span></div>
+                    </div>
+                    <div class="flex justify-between font-bold text-lg text-gray-900 mb-6">
+                        <span>Total:</span>
+                        <span x-text="'$' + total().toFixed(2)"></span>
+                    </div>
+                    <button class="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg font-bold text-lg transition">Checkout</button>
+                    <div class="flex justify-center gap-2 mt-4 opacity-50">
+                        <i class="fab fa-cc-visa text-2xl"></i>
+                        <i class="fab fa-cc-mastercard text-2xl"></i>
+                        <i class="fab fa-cc-paypal text-2xl"></i>
+                        <i class="fab fa-apple-pay text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-12 bg-white border rounded-lg p-6">
+            <h2 class="text-xl font-bold mb-6">Saved for later</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <template x-for="save in savedItems">
+                    <div class="group">
+                        <div class="bg-gray-100 rounded-lg p-4 mb-3 aspect-square flex items-center justify-center overflow-hidden">
+                            <img :src="save.img" class="max-w-full max-h-full object-contain group-hover:scale-105 transition">
+                        </div>
+                        <p class="font-bold text-lg mb-1" x-text="'$' + save.price"></p>
+                        <p class="text-sm text-gray-500 mb-4" x-text="save.name"></p>
+                        <button class="flex items-center gap-2 text-blue-600 border border-gray-200 px-4 py-2 rounded-lg font-semibold hover:bg-blue-50 transition">
+                            <i class="fas fa-shopping-cart"></i> Move to cart
+                        </button>
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <div class="mt-12 bg-blue-600 rounded-lg p-8 flex flex-col md:flex-row justify-between items-center text-white gap-4">
+            <div>
+                <h2 class="text-2xl font-bold">Super discount on more than 100 USD</h2>
+                <p class="opacity-80">Have you ever finally just write dummy info</p>
+            </div>
+            <button class="bg-orange-500 hover:bg-orange-600 px-6 py-2 rounded-lg font-bold">Shop now</button>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t mt-12 py-12">
+        <div class="container mx-auto px-4 grid grid-cols-2 md:grid-cols-6 gap-8">
+            <div class="col-span-2">
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="bg-blue-600 p-1 rounded text-white"><i class="fas fa-shopping-bag text-sm"></i></div>
+                    <span class="text-xl font-bold text-blue-600">Brand</span>
+                </div>
+                <p class="text-gray-500 text-sm mb-4">Best information about the company gies here but now lorem ipsum is</p>
+                <div class="flex gap-4 text-gray-400 text-xl">
+                    <i class="fab fa-facebook hover:text-blue-600 cursor-pointer"></i>
+                    <i class="fab fa-twitter hover:text-blue-400 cursor-pointer"></i>
+                    <i class="fab fa-linkedin hover:text-blue-700 cursor-pointer"></i>
+                    <i class="fab fa-instagram hover:text-pink-600 cursor-pointer"></i>
+                    <i class="fab fa-youtube hover:text-red-600 cursor-pointer"></i>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">About</h4>
+                <ul class="text-gray-500 text-sm space-y-2"><li>About Us</li><li>Find store</li><li>Categories</li><li>Blogs</li></ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Partnership</h4>
+                <ul class="text-gray-500 text-sm space-y-2"><li>About Us</li><li>Find store</li><li>Categories</li><li>Blogs</li></ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Information</h4>
+                <ul class="text-gray-500 text-sm space-y-2"><li>Help Center</li><li>Money Refund</li><li>Shipping</li><li>Contact us</li></ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Get app</h4>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" class="w-28 mb-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" class="w-28">
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function cartManager() {
+            return {
+                discount: 60.00,
+                taxRate: 0.01,
+                cartItems: [
+                    { id: 1, name: 'T-shirts with multiple colors, for men and lady', price: 78.99, qty: 9, size: 'medium', color: 'blue', material: 'Plastic', seller: 'Artel Market', img: 'Bitmap.png' },
+                    { id: 2, name: 'T-shirts with multiple colors, for men and lady', price: 39.00, qty: 3, size: 'medium', color: 'blue', material: 'Plastic', seller: 'Best factory LLC', img: 'image 26.png' },
+                    { id: 3, name: 'T-shirts with multiple colors, for men and lady', price: 170.50, qty: 1, size: 'medium', color: 'blue', material: 'Plastic', seller: 'Artel Market', img: '1.1.png' }
+                ],
+                savedItems: [
+                    { id: 101, name: 'GoPro HERO6 4K Action Camera - Black', price: 99.50, img: 'image 32.png' },
+                    { id: 102, name: 'GoPro HERO6 4K Action Camera - Black', price: 99.50, img: 'image 23.png' },
+                    { id: 103, name: 'GoPro HERO6 4K Action Camera - Black', price: 99.50, img: 'image 33.png' },
+                    { id: 104, name: 'GoPro HERO6 4K Action Camera - Black', price: 99.50, img: 'image 32.png' }
+                ],
+                subtotal() {
+                    return this.cartItems.reduce((acc, item) => acc + (item.price * item.qty), 0);
+                },
+                tax() {
+                    return this.subtotal() * this.taxRate;
+                },
+                total() {
+                    return (this.subtotal() + this.tax()) - this.discount;
+                },
+                removeItem(index) {
+                    this.cartItems.splice(index, 1);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

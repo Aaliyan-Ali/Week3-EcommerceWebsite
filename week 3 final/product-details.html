@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand E-commerce Clone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; }
+    </style>
+</head>
+<body x-data="{ 
+    activeTab: 'description',
+    mayLike: [
+        { title: 'Men Blazers Sets Elegant Formal', price: '$7.00 - $99.50', img: 'image 30.png' },
+        { title: 'Men Shirt Sleeve Polo Contrast', price: '$7.00 - $99.50', img: 'Bitmap.png' },
+        { title: 'Apple Watch Series Space Gray', price: '$7.00 - $99.50', img: '2 1.png' },
+        { title: 'Basketball Crew Socks Long Stuff', price: '$7.00 - $99.50', img: 'download.webp' },
+        { title: 'New Summer Men\'s castrol T-Shirts', price: '$7.00 - $99.50', img: 'image 26.png' }
+    ],
+    related: [
+        { title: 'Xiaomi Redmi 8 Original', price: '$32.00-$40.00', img: 'image 24.png' },
+        { title: 'Xiaomi Redmi 8 Original', price: '$32.00-$40.00', img: '8.png' },
+        { title: 'Xiaomi Redmi 8 Original', price: '$32.00-$40.00', img: 'image 6.png' },
+        { title: 'Xiaomi Redmi 8 Original', price: '$32.00-$40.00', img: 'Bitmap (2).png' },
+        { title: 'Xiaomi Redmi 8 Original', price: '$32.00-$40.00', img: 'image 8.png' },
+        { title: 'Xiaomi Redmi 8 Original', price: '$32.00-$40.00', img: '7.png' }
+    ]
+}">
+
+    <header class="bg-white border-b sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex flex-wrap items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="bg-blue-600 p-2 rounded-lg text-white">
+                    <i class="fas fa-shopping-bag text-xl"></i>
+                </div>
+                <span class="text-2xl font-bold text-blue-600">Brand</span>
+            </div>
+            
+            <div class="flex-1 mx-8 hidden md:flex border-2 border-blue-600 rounded-lg overflow-hidden">
+                <input type="text" placeholder="Search" class="w-full px-4 py-2 outline-none">
+                <select class="bg-white border-l px-4 outline-none">
+                    <option>All category</option>
+                </select>
+                <button class="bg-blue-600 text-white px-8 py-2">Search</button>
+            </div>
+
+            <div class="flex items-center gap-6 text-gray-500 text-sm">
+                <div class="text-center cursor-pointer hover:text-blue-600"><i class="fas fa-user block text-lg"></i>Profile</div>
+                <div class="text-center cursor-pointer hover:text-blue-600"><i class="fas fa-comment block text-lg"></i>Message</div>
+                <div class="text-center cursor-pointer hover:text-blue-600"><i class="fas fa-heart block text-lg"></i>Orders</div>
+                  <a href="my-cart.html"><i class="fas fa-shopping-cart text-lg block mb-1"></i>My cart</a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="bg-white border-b py-3 hidden md:block">
+        <div class="container mx-auto px-4 flex justify-between items-center text-sm font-medium">
+            <div class="flex gap-6">
+                <a href="products.html"><i class="fas fa-bars mr-2"></i> All category</a>
+                <a href="#">Hot offers</a>
+                <a href="#">Gift boxes</a>
+                <a href="#">Projects</a>
+                <a href="#">Menu item</a>
+                <a href="#">Help <i class="fas fa-chevron-down ml-1 text-xs"></i></a>
+            </div>
+            <div class="flex gap-6">
+                <span>English, USD <i class="fas fa-chevron-down ml-1 text-xs"></i></span>
+                <span>Ship to <img src="https://flagcdn.com/w20/de.png" class="inline w-4 pb-1"> <i class="fas fa-chevron-down ml-1 text-xs"></i></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-4 text-gray-400 text-sm">
+        <a href="index.html">Home</a> <span>&gt;</span>
+         Clothings > Men's wear > Summer clothing
+    </div>
+
+    <main class="container mx-auto px-4 pb-12">
+        <div class="bg-white border rounded-lg p-6 grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <div class="lg:col-span-4">
+                <div class="border rounded-lg mb-4 overflow-hidden bg-white">
+                    <img src="download.webp" onerror="this.src='https://placehold.co/400x400?text=Polo+Shirt'" class="w-full object-contain h-80">
+                </div>
+                <div class="flex gap-2">
+                    <template x-for="i in 6">
+                        <div class="border rounded p-1 cursor-pointer hover:border-blue-600">
+                            <img src="th (1).webp" class="w-full">
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5">
+                <p class="text-green-500 text-sm mb-2"><i class="fas fa-check"></i> In stock</p>
+                <h1 class="text-2xl font-bold text-gray-800 mb-2">Mens Long Sleeve T-shirt Cotton Base Layer Slim Muscle</h1>
+                
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="flex text-orange-400 text-sm">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        <span class="ml-2 text-orange-500">9.3</span>
+                    </div>
+                    <span class="text-gray-400 text-sm"><i class="fas fa-comment mr-1"></i> 32 reviews</span>
+                    <span class="text-gray-400 text-sm"><i class="fas fa-shopping-basket mr-1"></i> 154 sold</span>
+                </div>
+
+                <div class="bg-orange-50 p-4 rounded flex justify-between mb-4 border-l-4 border-orange-200">
+                    <div><p class="text-red-500 font-bold text-xl">$98.00</p><p class="text-xs text-gray-500">50-100 pcs</p></div>
+                    <div class="border-l pl-4"> <p class="font-bold text-xl">$90.00</p><p class="text-xs text-gray-500">100-700 pcs</p></div>
+                    <div class="border-l pl-4"> <p class="font-bold text-xl">$78.00</p><p class="text-xs text-gray-500">700+ pcs</p></div>
+                </div>
+
+                <div class="space-y-3 text-sm border-b pb-4">
+                    <div class="flex"><span class="w-32 text-gray-400">Price:</span> <span class="text-gray-700">Negotiable</span></div>
+                    <div class="flex"><span class="w-32 text-gray-400">Type:</span> <span class="text-gray-700">Classic shoes</span></div>
+                    <div class="flex"><span class="w-32 text-gray-400">Material:</span> <span class="text-gray-700">Plastic material</span></div>
+                    <div class="flex"><span class="w-32 text-gray-400">Design:</span> <span class="text-gray-700">Modern nice</span></div>
+                </div>
+
+                <div class="mt-4 space-y-3 text-sm">
+                    <div class="flex"><span class="w-32 text-gray-400">Customization:</span> <span class="text-gray-700">Customized logo and design custom packages</span></div>
+                    <div class="flex"><span class="w-32 text-gray-400">Protection:</span> <span class="text-gray-700">Refund Policy</span></div>
+                    <div class="flex"><span class="w-32 text-gray-400">Warranty:</span> <span class="text-gray-700">2 years full warranty</span></div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-3">
+                <div class="border rounded-lg p-4 shadow-sm bg-white">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-blue-100 text-blue-600 font-bold w-12 h-12 flex items-center justify-center rounded-lg text-xl">R</div>
+                        <div>
+                            <p class="text-sm">Supplier</p>
+                            <p class="font-semibold">Guanjoi Trading LLC</p>
+                        </div>
+                    </div>
+                    <hr class="mb-4">
+                    <div class="space-y-3 text-sm text-gray-500 mb-6">
+                        <p><img src="https://flagcdn.com/w20/de.png" class="inline w-4 mr-2"> Germany, Berlin</p>
+                        <p><i class="fas fa-shield-alt mr-2"></i> Verified Seller</p>
+                        <p><i class="fas fa-globe mr-2"></i> Worldwide shipping</p>
+                    </div>
+                    <button class="w-full bg-blue-600 text-white py-2 rounded-lg mb-2 hover:bg-blue-700 transition"><a href="my-cart.html">Send inquiry</a></button>
+                    <button class="w-full border border-gray-200 text-blue-600 py-2 rounded-lg font-semibold hover:bg-gray-50">Seller's profile</button>
+                </div>
+                <button class="w-full mt-4 text-blue-600 font-semibold text-sm hover:underline"><i class="far fa-heart mr-2"></i> Save for later</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-8">
+            <div class="lg:col-span-3 bg-white border rounded-lg">
+                <div class="flex border-b text-gray-500 font-semibold overflow-x-auto">
+                    <button @click="activeTab = 'description'" :class="activeTab === 'description' ? 'text-blue-600 border-b-2 border-blue-600' : ''" class="px-6 py-4 hover:bg-gray-50 whitespace-nowrap">Description</button>
+                    <button @click="activeTab = 'reviews'" :class="activeTab === 'reviews' ? 'text-blue-600 border-b-2 border-blue-600' : ''" class="px-6 py-4 hover:bg-gray-50 whitespace-nowrap">Reviews</button>
+                    <button @click="activeTab = 'shipping'" :class="activeTab === 'shipping' ? 'text-blue-600 border-b-2 border-blue-600' : ''" class="px-6 py-4 hover:bg-gray-50 whitespace-nowrap">Shipping</button>
+                    <button @click="activeTab = 'seller'" :class="activeTab === 'seller' ? 'text-blue-600 border-b-2 border-blue-600' : ''" class="px-6 py-4 hover:bg-gray-50 whitespace-nowrap">About seller</button>
+                </div>
+                <div class="p-6 text-gray-600 leading-relaxed">
+                    <div x-show="activeTab === 'description'">
+                        <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        
+                        <table class="w-full border text-sm mb-6">
+                            <tr><td class="bg-gray-50 p-2 border w-40">Model</td><td class="p-2 border">#8786867</td></tr>
+                            <tr><td class="bg-gray-50 p-2 border">Style</td><td class="p-2 border">Classic style</td></tr>
+                            <tr><td class="bg-gray-50 p-2 border">Certificate</td><td class="p-2 border">ISO-898921212</td></tr>
+                            <tr><td class="bg-gray-50 p-2 border">Size</td><td class="p-2 border">34mm x 450mm x 19mm</td></tr>
+                            <tr><td class="bg-gray-50 p-2 border">Memory</td><td class="p-2 border">36GB RAM</td></tr>
+                        </table>
+
+                        <ul class="space-y-2 text-sm">
+                            <li><i class="fas fa-check text-gray-400 mr-2"></i> Some great feature name here</li>
+                            <li><i class="fas fa-check text-gray-400 mr-2"></i> Lorem ipsum dolor sit amet, consectetur</li>
+                            <li><i class="fas fa-check text-gray-400 mr-2"></i> Duis aute irure dolor in reprehenderit</li>
+                        </ul>
+                    </div>
+                    <div x-show="activeTab === 'reviews'">Customer reviews content goes here...</div>
+                    <div x-show="activeTab === 'shipping'">Worldwide shipping options and delivery times...</div>
+                    <div x-show="activeTab === 'seller'">Merchant history and verification details...</div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-1">
+                <div class="bg-white border rounded-lg p-4">
+                    <h3 class="font-bold mb-4 text-gray-800">You may like</h3>
+                    <div class="space-y-4">
+                        <template x-for="item in mayLike">
+                            <div class="flex items-center gap-3 cursor-pointer group">
+                                <div class="w-16 h-16 border rounded p-1 flex-shrink-0 overflow-hidden">
+                                    <img :src="item.img" class="w-full h-full object-contain group-hover:scale-110 transition">
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-800 line-clamp-2 leading-tight" x-text="item.title"></p>
+                                    <p class="text-gray-400 text-sm mt-1" x-text="item.price"></p>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-12 bg-white border rounded-lg p-6">
+            <h2 class="text-xl font-bold mb-6 text-gray-800">Related products</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <template x-for="product in related">
+                    <div class="cursor-pointer group">
+                        <div class="bg-gray-100 rounded-lg p-4 mb-3 flex items-center justify-center aspect-square overflow-hidden">
+                            <img :src="product.img" class="max-w-full max-h-full object-contain group-hover:scale-105 transition">
+                        </div>
+                        <p class="text-sm text-gray-600 mb-1 line-clamp-2" x-text="product.title"></p>
+                        <p class="text-gray-400 text-sm font-medium" x-text="product.price"></p>
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-blue-600 rounded-lg p-8 flex flex-col md:flex-row justify-between items-center text-white gap-4">
+            <div>
+                <h2 class="text-2xl font-bold">Super discount on more than 100 USD</h2>
+                <p class="opacity-80">Have you ever finally just write dummy info</p>
+            </div>
+            <button class="bg-orange-500 hover:bg-orange-600 px-6 py-2 rounded-lg font-bold transition">Shop now</button>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t py-12">
+        <div class="container mx-auto px-4 grid grid-cols-2 md:grid-cols-6 gap-8">
+            <div class="col-span-2">
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="bg-blue-600 p-1 rounded text-white"><i class="fas fa-shopping-bag text-sm"></i></div>
+                    <span class="text-xl font-bold text-blue-600">Brand</span>
+                </div>
+                <p class="text-gray-500 text-sm mb-4">Best information about the company gies here but now lorem ipsum is</p>
+                <div class="flex gap-4 text-gray-400">
+                    <i class="fab fa-facebook hover:text-blue-600 cursor-pointer"></i>
+                    <i class="fab fa-twitter hover:text-blue-400 cursor-pointer"></i>
+                    <i class="fab fa-linkedin hover:text-blue-700 cursor-pointer"></i>
+                    <i class="fab fa-instagram hover:text-pink-600 cursor-pointer"></i>
+                    <i class="fab fa-youtube hover:text-red-600 cursor-pointer"></i>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">About</h4>
+                <ul class="text-gray-500 text-sm space-y-2">
+                    <li>About Us</li><li>Find store</li><li>Categories</li><li>Blogs</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Partnership</h4>
+                <ul class="text-gray-500 text-sm space-y-2">
+                    <li>About Us</li><li>Find store</li><li>Categories</li><li>Blogs</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Information</h4>
+                <ul class="text-gray-500 text-sm space-y-2">
+                    <li>Help Center</li><li>Money Refund</li><li>Shipping</li><li>Contact us</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Get app</h4>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" class="w-32 mb-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" class="w-32">
+            </div>
+        </div>
+        <div class="bg-gray-100 mt-12 py-4">
+            <div class="container mx-auto px-4 flex justify-between text-sm text-gray-500">
+                <p>© 2023 Ecommerce.</p>
+                <p><img src="https://flagcdn.com/w20/us.png" class="inline w-4 mr-1"> English <i class="fas fa-chevron-up ml-1 text-xs"></i></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products List - Brand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlue: '#0D6EFD',
+                        brandLightBlue: '#E3F0FF',
+                        brandGray: '#8B96A5',
+                        brandBorder: '#E3E8EE',
+                        brandText: '#1C1C1C',
+                        brandBg: '#F7FAFC'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brandBg text-brandText">
+
+    <header class="bg-white border-b border-brandBorder">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <div class="bg-brandBlue p-2 rounded-md"><i class="fas fa-shopping-bag text-white text-xl"></i></div>
+                <span class="text-2xl font-bold text-brandBlue">Brand</span>
+            </div>
+            <div class="flex-1 max-w-2xl mx-10">
+                <div class="flex border-2 border-brandBlue rounded-lg overflow-hidden">
+                    <input type="text" placeholder="Search" class="w-full px-4 py-2 outline-none">
+                    <select class="border-l border-brandBorder px-4 bg-white outline-none text-sm"><option>All category</option></select>
+                    <button class="bg-brandBlue text-white px-8 py-2">Search</button>
+                </div>
+            </div>
+            <div class="flex items-center space-x-6 text-brandGray text-xs text-center">
+                <a href="#"><i class="fas fa-user text-lg block mb-1"></i>Profile</a>
+                <a href="#"><i class="fas fa-comment text-lg block mb-1"></i>Message</a>
+                <a href="#"><i class="fas fa-heart text-lg block mb-1"></i>Orders</a>
+                <a href="my-cart.html"><i class="fas fa-shopping-cart text-lg block mb-1"></i>My cart</a>
+            </div>
+        </div>
+
+
+
+  <nav class="border-t border-brandBorder">
+            <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between text-sm font-medium">
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="flex items-center space-x-2"><i class="fas fa-bars"></i><span>All category</span></a>
+                    <a href="#">Hot offers</a><a href="#">Gift boxes</a><a href="#">Projects</a><a href="#">Menu item</a><a href="#">Help</a>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <span>English, USD <i class="fas fa-chevron-down text-[10px]"></i></span>
+                    <span>Ship to <img src="https://flagcdn.com/w20/de.png" class="inline mb-0.5"> <i class="fas fa-chevron-down text-[10px]"></i></span>
+                </div>
+            </div>
+        </nav>
+
+
+
+
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-4">
+        <nav class="flex text-brandGray text-sm mb-5 space-x-2">
+            <a href="index.html">Home</a> <span>&gt;</span>
+            <a href="#">Clothings</a> <span>&gt;</span>
+            <a href="#">Men's wear</a> <span>&gt;</span>
+            <span class="text-brandText font-medium">Summer clothing</span>
+        </nav>
+
+        <div class="flex gap-6">
+            <aside class="w-64 space-y-4">
+                <div class="border-t border-brandBorder py-3">
+                    <div class="flex justify-between items-center font-bold mb-3"><span>Category</span> <i class="fas fa-chevron-up text-xs"></i></div>
+                    <ul class="text-gray-600 space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-brandBlue">Mobile accessory</a></li>
+                        <li><a href="#" class="hover:text-brandBlue">Electronics</a></li>
+                        <li><a href="#" class="hover:text-brandBlue">Smartphones</a></li>
+                        <li><a href="#" class="hover:text-brandBlue">Modern tech</a></li>
+                        <li class="text-brandBlue cursor-pointer">See all</li>
+                    </ul>
+                </div>
+
+                <div class="border-t border-brandBorder py-3">
+                    <div class="flex justify-between items-center font-bold mb-3"><span>Brands</span> <i class="fas fa-chevron-up text-xs"></i></div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="w-4 h-4 rounded"> Samsung</label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="w-4 h-4 rounded"> Apple</label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="w-4 h-4 rounded"> Huawei</label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="w-4 h-4 rounded"> Pocco</label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="w-4 h-4 rounded"> Lenovo</label>
+                        <p class="text-brandBlue cursor-pointer">See all</p>
+                    </div>
+                </div>
+
+                <div class="border-t border-brandBorder py-3">
+                    <div class="flex justify-between items-center font-bold mb-3"><span>Features</span> <i class="fas fa-chevron-up text-xs"></i></div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="w-4 h-4 rounded"> Metallic</label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="w-4 h-4 rounded"> Plastic cover</label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="w-4 h-4 rounded"> 8GB Ram</label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="w-4 h-4 rounded"> Super power</label>
+                        <p class="text-brandBlue cursor-pointer">See all</p>
+                    </div>
+                </div>
+
+                <div class="border-t border-brandBorder py-3">
+                    <div class="flex justify-between items-center font-bold mb-3"><span>Price range</span> <i class="fas fa-chevron-up text-xs"></i></div>
+                    <input type="range" class="w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer mb-4">
+                    <div class="flex gap-2">
+                        <div class="flex-1">
+                            <label class="text-xs">Min</label>
+                            <input type="number" placeholder="0" class="w-full border border-brandBorder rounded p-2 text-sm">
+                        </div>
+                        <div class="flex-1">
+                            <label class="text-xs">Max</label>
+                            <input type="number" placeholder="999999" class="w-full border border-brandBorder rounded p-2 text-sm">
+                        </div>
+                    </div>
+                    <button class="w-full border border-brandBorder text-brandBlue font-bold py-2 mt-3 rounded bg-white hover:bg-gray-50">Apply</button>
+                </div>
+            </aside>
+
+            <div class="flex-1">
+                <div class="bg-white border border-brandBorder rounded-lg p-4 flex justify-between items-center mb-4">
+                    <div class="text-sm">
+                        12,911 items in <span class="font-bold">Mobile accessory</span>
+                    </div>
+                    <div class="flex items-center gap-4 text-sm">
+                        <label class="flex items-center gap-2"><input type="checkbox" checked> Verified only</label>
+                        <select class="border border-brandBorder rounded p-1"><option>Featured</option></select>
+                        <div class="flex border border-brandBorder rounded overflow-hidden">
+                            <button class="p-2 border-r border-brandBorder bg-gray-100"><i class="fas fa-th"></i></button>
+                            <button class="p-2 bg-white text-brandBlue"><i class="fas fa-list"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex gap-2 mb-4">
+                    <div class="border border-brandBorder rounded px-3 py-1 bg-white text-sm flex items-center gap-2">Samsung <i class="fas fa-times text-gray-400 cursor-pointer"></i></div>
+                    <div class="border border-brandBorder rounded px-3 py-1 bg-white text-sm flex items-center gap-2">Apple <i class="fas fa-times text-gray-400 cursor-pointer"></i></div>
+                    <button class="text-brandBlue text-sm">Clear all filter</button>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="bg-white border border-brandBorder rounded-lg p-5 flex gap-6 hover:shadow-md transition">
+                        <div class="w-48 h-48 flex-shrink-0 flex items-center justify-center p-4">
+                            <img src="https://via.placeholder.com/150" alt="Product" class="max-h-full">
+                        </div>
+                        <div class="flex-1 relative">
+                            <button class="absolute right-0 top-0 border border-brandBorder p-2 rounded hover:bg-gray-50"><i class="far fa-heart text-brandBlue"></i></button>
+                            <h3 class="text-lg font-medium text-gray-800 mb-2 pr-10">Canon Camera EOS 2000, Black 10x zoom</h3>
+                            <div class="flex items-center gap-4 mb-2">
+                                <span class="font-bold text-xl">$998.00</span>
+                                <span class="text-brandGray line-through text-sm">$1128.00</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm mb-3">
+                                <div class="text-orange-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                                <span class="text-orange-400">7.5</span>
+                                <span class="text-brandGray">• 154 orders • <span class="text-brandGreen font-medium text-green-600">Free Shipping</span></span>
+                            </div>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <a href="product-details.html" class="text-brandBlue font-bold hover:underline">View details</a>
+                        </div>
+                    </div>
+
+                    <script>
+                        for(let i=0; i<5; i++) {
+                            document.write(`
+                            <div class="bg-white border border-brandBorder rounded-lg p-5 flex gap-6 hover:shadow-md transition">
+                                <div class="w-48 h-48 flex-shrink-0 flex items-center justify-center p-4">
+                                    <img src="https://via.placeholder.com/150" alt="Product" class="max-h-full">
+                                </div>
+                                <div class="flex-1 relative">
+                                    <button class="absolute right-0 top-0 border border-brandBorder p-2 rounded hover:bg-gray-50"><i class="far fa-heart text-brandBlue"></i></button>
+                                    <h3 class="text-lg font-medium text-gray-800 mb-2 pr-10">GoPro HERO6 4K Action Camera - Black</h3>
+                                    <div class="flex items-center gap-4 mb-2">
+                                        <span class="font-bold text-xl">$998.00</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-sm mb-3">
+                                        <div class="text-orange-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star text-gray-300"></i></div>
+                                        <span class="text-orange-400">7.5</span>
+                                        <span class="text-brandGray">• 154 orders • <span class="text-brandGreen font-medium text-green-600">Free Shipping</span></span>
+                                    </div>
+                                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>
+                                    <a href="product-details.html" class="text-brandBlue font-bold hover:underline">View details</a>
+                                </div>
+                            </div>`);
+                        }
+                    </script>
+                </div>
+
+                <div class="flex justify-end mt-6 gap-2">
+                    <select class="border border-brandBorder rounded px-2 text-sm"><option>Show 10</option></select>
+                    <div class="flex border border-brandBorder rounded overflow-hidden bg-white">
+                        <button class="p-2 border-r border-brandBorder hover:bg-gray-50"><i class="fas fa-chevron-left"></i></button>
+                        <button class="px-4 py-2 border-r border-brandBorder bg-gray-100 font-bold">1</button>
+                        <button class="px-4 py-2 border-r border-brandBorder hover:bg-gray-50">2</button>
+                        <button class="px-4 py-2 border-r border-brandBorder hover:bg-gray-50">3</button>
+                        <button class="p-2 hover:bg-gray-50"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <section class="bg-[#EFF2F4] py-10 rounded-lg text-center">
+            <h3 class="text-xl font-bold mb-2">Subscribe on our newsletter</h3>
+            <p class="text-brandGray mb-6 text-sm">Get daily news on upcoming offers from many suppliers all over the world</p>
+            <div class="flex max-w-md mx-auto gap-2">
+                <div class="flex-1 relative">
+                    <i class="far fa-envelope absolute left-3 top-3 text-brandGray"></i>
+                    <input type="email" placeholder="Email" class="w-full pl-10 pr-4 py-2 border border-brandBorder rounded-lg outline-none">
+                </div>
+                <button class="bg-brandBlue text-white px-6 py-2 rounded-lg font-bold">Subscribe</button>
+            </div>
+        </section>
+    </main>
+ <footer class="bg-white border-t border-brandBorder mt-10 py-12">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-5 gap-10">
+            <div class="col-span-1">
+                <div class="flex items-center space-x-2 mb-4 text-brandBlue font-bold text-xl">
+                    <div class="bg-brandBlue p-1.5 rounded"><i class="fas fa-shopping-bag text-white text-sm"></i></div><span>Brand</span>
+                </div>
+                <p class="text-gray-500 text-sm mb-6">Best information about the company gies here but now lorem ipsum is</p>
+                <div class="flex space-x-3 text-gray-400"><i class="fab fa-facebook"></i><i class="fab fa-twitter"></i><i class="fab fa-linkedin"></i><i class="fab fa-instagram"></i><i class="fab fa-youtube"></i></div>
+            </div>
+            <div><h4 class="font-bold mb-4">About</h4><ul class="text-gray-500 text-sm space-y-2"><li>About Us</li><li>Find store</li><li>Categories</li><li>Blogs</li></ul></div>
+            <div><h4 class="font-bold mb-4">Partnership</h4><ul class="text-gray-500 text-sm space-y-2"><li>About Us</li><li>Find store</li><li>Categories</li><li>Blogs</li></ul></div>
+            <div><h4 class="font-bold mb-4">Information</h4><ul class="text-gray-500 text-sm space-y-2"><li>Help Center</li><li>Refund</li><li>Shipping</li><li>Contact us</li></ul></div>
+            <div><h4 class="font-bold mb-4">Get app</h4><img src="market-button.png" class="mb-2"><img src="Group.png"></div>
+        </div>
+    </footer>
+    <div class="bg-[#EEEEEE] py-4 text-sm text-gray-500"><div class="max-w-7xl mx-auto px-4 flex justify-between"><p>© 2023 Ecommerce.</p><p>English <i class="fas fa-chevron-up ml-1 text-[10px]"></i></p></div></div>
+</body>
+
+
+
+
+
+<script>
+    // 1. Data Structure representing your products
+    const allProducts = [
+        { id: 1, brand: 'Samsung', name: 'Canon Camera EOS 2000, Black 10x zoom', price: 998, rating: 7.5, orders: 154, img: 'image 33.png', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
+        { id: 2, brand: 'Apple', name: 'GoPro HERO6 4K Action Camera - Black', price: 998, rating: 7.5, orders: 154, img: 'image 23.png', desc: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' },
+        { id: 3, brand: 'Huawei', name: 'Huawei Mate 40 Pro High Tech', price: 850, rating: 8.2, orders: 98, img: 'image 32.png', desc: 'Experience the next generation of mobile photography and speed.' },
+        { id: 4, brand: 'Samsung', name: 'Samsung Galaxy Watch 4 Classic', price: 240, rating: 9.0, orders: 1200, img: 'image 34.png', desc: 'Track your fitness and stay connected with this premium smartwatch.' }
+    ];
+
+    let activeBrands = [];
+    let isGridView = false;
+
+    // 2. The Filter Function
+    function updateDisplay() {
+        const gridContainer = document.querySelector('.space-y-3'); // Your product container
+        const tagsContainer = document.querySelector('.flex.gap-2.mb-4'); // Your tags container
+        const countDisplay = document.querySelector('.text-sm span.font-bold').parentElement;
+
+        // Filter products based on selected brands
+        const filtered = allProducts.filter(p => activeBrands.length === 0 || activeBrands.includes(p.brand));
+
+        // Update Item Count
+        countDisplay.innerHTML = `${filtered.length} items in <span class="font-bold">Mobile accessory</span>`;
+
+        // Update Tags
+        tagsContainer.innerHTML = activeBrands.map(brand => `
+            <div class="border border-brandBorder rounded px-3 py-1 bg-white text-sm flex items-center gap-2">
+                ${brand} <i class="fas fa-times text-gray-400 cursor-pointer" onclick="toggleBrand('${brand}')"></i>
+            </div>
+        `).join('') + (activeBrands.length > 0 ? `<button onclick="clearFilters()" class="text-brandBlue text-sm">Clear all filter</button>` : '');
+
+        // Update Product List
+        gridContainer.innerHTML = filtered.map(p => `
+            <div class="bg-white border border-brandBorder rounded-lg p-5 flex gap-6 hover:shadow-md transition">
+                <div class="w-48 h-48 flex-shrink-0 flex items-center justify-center p-4">
+                    <img src="${p.img}" alt="Product" class="max-h-full">
+                </div>
+                <div class="flex-1 relative">
+                    <button class="absolute right-0 top-0 border border-brandBorder p-2 rounded hover:bg-gray-50"><i class="far fa-heart text-brandBlue"></i></button>
+                    <h3 class="text-lg font-medium text-gray-800 mb-2 pr-10">${p.name}</h3>
+                    <div class="flex items-center gap-4 mb-2">
+                        <span class="font-bold text-xl">$${p.price}.00</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm mb-3">
+                        <div class="text-orange-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                        <span class="text-orange-400">${p.rating}</span>
+                        <span class="text-brandGray">• ${p.orders} orders • <span class="text-green-600">Free Shipping</span></span>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">${p.desc}</p>
+                    <a href="product-details.html" class="text-brandBlue font-bold hover:underline">View details</a>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    // 3. Event Listeners for Checkboxes
+    function toggleBrand(brandName) {
+        if (activeBrands.includes(brandName)) {
+            activeBrands = activeBrands.filter(b => b !== brandName);
+        } else {
+            activeBrands.push(brandName);
+        }
+        
+        // Update checkbox visual state
+        document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+            if(cb.nextSibling.textContent.trim() === brandName) cb.checked = activeBrands.includes(brandName);
+        });
+
+        updateDisplay();
+    }
+
+    function clearFilters() {
+        activeBrands = [];
+        document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+        updateDisplay();
+    }
+
+    // Initialize listeners on checkboxes
+    document.querySelectorAll('aside input[type="checkbox"]').forEach(checkbox => {
+        checkbox.addEventListener('change', (e) => {
+            const label = e.target.parentElement.textContent.trim();
+            toggleBrand(label);
+        });
+    });
+
+    // Run on load
+    updateDisplay();
+</script>
+
+
+
+
+    </body>
+</html>
